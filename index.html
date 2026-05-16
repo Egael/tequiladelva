@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="hero">
+    <img id="logo">
+    <p id="slogan"></p>
+    <div id="botones"></div>
+    </div>
+</header>
+
+<section id="evento"></section>
+<section id="mezcal" class="box"></section>
+<section id="coming"></section>
+<section id="faq"></section>
+<section id="contacto"></section>
+<section id="sponsors"></section>
+<footee id="footer"></footer>
+<script src="config.js"></script>
+<script>
+
+document.title = site.marca;
+document.getElementById("logo").src = site.logo;
+document.getElementById("slogan").innerText = site.slogan;
+
+document.documentElement.style.setProperty("--bg", site.colores.fondo);
+document.documentElement.style.setProperty("--primary", site.colores.primario);
+document.documentElement.style.setProperty("--text", site.colores.texto);
+
+// Botones
+const botones = document.getElementById("botones");
+site.botones.forEach(b => {
+  botones.innerHTML += `<a class="btn" href="${b.link}" target="_blank">${b.texto}</a>`;
+});
+
+// Evento
+if(site.evento.activo){
+    document.getElementById("evento").innerHTML = `
+    <h2>${site.evento.titulo}</h2>
+    <img class="banner" src="${site.evento.banner}">
+    <p><strong>Artista:</strong> ${site.evento.artista}</p>
+    <p><strong>Fecha:</strong> ${site.evento.fecha}</p>
+    <p><strong>Hora:</strong> ${site.evento.hora}</p>
+    <p><strong>Lugar:</strong> ${site.evento.lugar}</p>
+    <a class="btn" href="${site.evento.boton.link}" target="_blank">${site.evento.boton.texto}</a>`;
+}
+
+// Sponsors
+
+if(site.secciones.sponsors){
+    const s = document.getElementById("sponsors");
+    s.innerHTML = `<h2>Patrocinadores</h2><div class="sponsor-logos"></div>`;
+    site.patrocinadores.forEach(p=>{
+    s.innerHTML += `<a class="sponsor-logos img"href="${p.link}" target="_blank"><img src="${p.logo}"></a>`;
+    });
+}
+
+document.getElementById("footer").innerText = site.footer;
+
+</script>
+
+</body>
+</html>
