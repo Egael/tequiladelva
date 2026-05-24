@@ -1,12 +1,9 @@
-/* RESET */
 body {
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
   background: #ffffff;
 }
 
-/* AGE GATE */
-/* CONTENEDOR GENERAL */
 .age-gate {
   position: fixed;
   top: 0;
@@ -19,16 +16,14 @@ body {
   align-items: center;
 }
 
-/* FONDO OSCURO DETRÁS */
 .age-backdrop {
   position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(6px); /* 🔥 efecto premium */
+  backdrop-filter: blur(6px);
 }
 
-/* CAJA PRINCIPAL (75%) */
 .age-modal {
   position: relative;
   width: 75%;
@@ -50,7 +45,6 @@ body {
   margin: 20px 0 40px;
 }
 
-/* BOTONES */
 .age-buttons {
   display: flex;
   justify-content: center;
@@ -77,7 +71,6 @@ body {
   gap: 40px; /* 👈 este es el bueno */
 }
 
-/* IZQUIERDA */
 .nav-left {
   display: flex;
   align-items: center;
@@ -91,7 +84,19 @@ body {
   color: #2d2dd8;
 }
 
-/* LOGO CENTRADO REAL */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.nav-right nav a {
+  text-decoration: none;
+  font-size: 17px;
+  letter-spacing: 1.5px;
+  color: #2d2dd8;
+}
+
 .logo {
   position: absolute;
   left: 50%;
@@ -108,31 +113,14 @@ body {
   letter-spacing: 3px;
 }
 
-/* DERECHA */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 100px;
-}
-
-.nav-right nav a {
-  text-decoration: none;
-  font-size: 17px;
-  letter-spacing: 1.5px;
-  color: #2d2dd8;
-}
-
-
-/* HAMBURGUESA */
 .menu-btn {
   display: none;
   font-size: 20px;
   cursor: pointer;
 }
 
-/* MOBILE MENU */
 .mobile {
-  display: none; /* 👈 clave */
+  display: none;
   position: fixed;
   top: 90px;
   width: 100%;
@@ -145,7 +133,6 @@ body {
   display: flex;
 }
 
-/* HERO VIDEO */
 .hero {
   height: 100vh;
   position: relative;
@@ -185,7 +172,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* HOVER elegante */
 .btn-premium:hover {
   background: white;
   color: #0a0a23;
@@ -202,19 +188,16 @@ body {
   color: white;
 }
 
-/* SECCIONES */
 .section {
   padding: 120px 60px;
   text-align: center;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: 40px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .nav-left nav,
   .nav-right nav {
